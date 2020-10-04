@@ -4,7 +4,7 @@ import argparse
 import os
 from PyPDF2 import PdfFileReader, PdfFileWriter
 
-parser = argparse.ArgumentParser(description='split a pdfs into multiple files')
+parser = argparse.ArgumentParser(description='split a pdf into multiple files')
 parser.add_argument('file', help='choose the file to be split')
 parser.add_argument('-p', '--pages', metavar='pages', help='choose the number of pages in each split file', type=int)
 parser.add_argument('-o', '--output', metavar='output', help='set the base name of the split output files', default='split')
