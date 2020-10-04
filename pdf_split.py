@@ -28,7 +28,7 @@ for split in splits:
     writer = PdfFileWriter()
     while page < split:
         writer.addPage(pdf.getPage(page))
-        output = './split_files/' + args.output + str(split) + '.pdf'
-        with open(output, 'wb') as out:
-            writer.write(out)
         page += 1
+    output = './split_files/' + args.output + str(split) + '.pdf'
+    with open(output, 'wb') as out:
+        writer.write(out)
