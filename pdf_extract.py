@@ -3,7 +3,6 @@
 import argparse
 import os
 from PyPDF2 import PdfFileReader
-import pyperclip
 
 parser = argparse.ArgumentParser(description='extract the text from a pdf')
 parser.add_argument('file', help='choose the file to extract text from')
@@ -21,7 +20,12 @@ for i in range(pdf.getNumPages()):
     text += content + '\n'
 
 if args.copy:
-    pyperclip.copy(text)
+    try:
+        import pyperclip
+    except ImportError:
+        print('pyperclip module is required to use the copy argument')
+    else:
+        pyperclip.copy(text)
 
 out.write(text)
 out.close()
