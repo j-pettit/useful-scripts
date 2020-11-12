@@ -1,21 +1,15 @@
-#!/usr/bin/env python
+''' Archive a folder into a zip'''
+
+import argparse
 import os
-import zipfile
+import shutil
 
-# input the dir of folder/file
-dirPath = '/home/yanuarakhid/myfolder'
+parser = argparse.ArgumentParser(description='extract the text from a pdf')
+parser.add_argument('path', help='choose the folder to archive')
+parser.add_argument('-o', '--output', metavar='output', help='set the output file name', default='archive')
+args = parser.parse_args()
 
-# input the name
-Zipname = 'myfolder.zip'
+path = args.path
+output = args.output
 
-
-def zipfunc(path, ziph):
-    for root, dirs, files in os.walk(path):
-        for file in files:
-            ziph.write(os.path.join(root, file))
-
-
-if __name__ == '__main__':
-    zipf = zipfile.ZipFile(Zipname, 'w', zipfile.ZIP_DEFLATED)
-    zipfunc(dirPath, zipf)
-    zipf.close()
+shutil.make_archive(output, 'zip', path)
