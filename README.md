@@ -4,7 +4,7 @@ Useful scripts for everyday use.
 ### Contribution Guidelines
 - Create scripts that will save people time, make difficult tasks easier, or just fulfill an interesting purpose. If you would use it, chances are others would as well.
 - Ensure scripts can be run "as is", inputs should be passed as cli arguments or similar.
-- When you add a script, add a brief description to the [Scripts](#scripts) section.
+- When you add a script, add a brief description to the [Scripts](#scripts) section along with any non-standard libraries.
 - If you want to be added as a collaborator, just let me know!
 
 ### Scripts
