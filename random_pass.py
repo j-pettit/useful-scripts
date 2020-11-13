@@ -41,6 +41,9 @@ def _generate_random_number_for_each_sequence(total, length):
     return r
 
 def _is_repeating(password):
-    pass
+    for i in range(1, len(password)):
+        if password[i] == password[i-1]:
+            return True
+        return False
 
-generate_random_password(random.randint(6, 20), SEQUENCE)
+print(generate_random_password(random.randint(6, 6), SEQUENCE))
