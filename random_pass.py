@@ -15,19 +15,32 @@ SEQUENCE = (UPPERCASE_CHARS,
 
 def generate_random_password(total, sequences):
     r = _generate_random_number_for_each_sequence(total, len(sequences))
-    print(r)
     password = []
+    for population, k in zip(sequences, r):
+        n = 0
+        while n < k:
+            password += secrets.choice(population)
+            n += 1
+    random.shuffle(password)
 
+    while _is_repeating(password):
+        random.shuffle(password)
 
-def _generate_random_number_for_each_sequence(total, sequence_number):
+    return ''.join(password)
+
+def _generate_random_number_for_each_sequence(total, length):
+    ''' Create a random sequence of $length elements with a sum of $total ''' 
     curr_total = 0
     r = []
-    for n in range(sequence_number-1, 0, -1):
+    for n in range(length-1, 0, -1):
         curr = random.randint(1, total - curr_total - n)
         curr_total += curr
         r.append(curr)
     r.append(total-sum(r))
     random.shuffle(r)
     return r
+
+def _is_repeating(password):
+    pass
 
 generate_random_password(random.randint(6, 20), SEQUENCE)
