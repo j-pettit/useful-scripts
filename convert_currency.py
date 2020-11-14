@@ -14,7 +14,8 @@ target = args.target.upper()
 url = "http://freecurrencyrates.com/api/action.php?do=cvals&iso=" + args.target + "&f=" + args.base + "&v=1&s=cbr"
 r = request.urlopen(url)
 obj = json.loads(r.read())
-val = obj[target] * args.value
-convert = '{:,.2f}'.format(val)
+res = obj[target] * args.value
+res_f = '{:,.2f}'.format(res)
+val_f = '{:,.2f}'.format(args.value)
 
-print(f'{str(args.value)} {base} has a value of {convert} {target}')
+print(f'{val_f} {base} has a value of {res_f} {target}')
