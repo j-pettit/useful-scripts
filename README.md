@@ -9,6 +9,7 @@ Useful scripts for everyday use.
 
 ### Scripts
 - `archive_files.py` - archive a file or folder using the zip format.
+- `convert_currency.py` - convert a the value of a currency to a second currency.
 - `pdf_extract.py` - extract text from a PDF file, accuracy depends on the quality and encoding of the PDF. Uses `PyPDF2`, `pyperclip` (for `--copy` only).
 - `pdf_join.py` - merge multiple PDFs into a single file. Uses `PyPDF2`.
 - `pdf_split.py` - split a PDF file into multiple files. Uses `PyPDF2`.

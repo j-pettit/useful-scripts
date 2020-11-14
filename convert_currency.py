@@ -1,3 +1,5 @@
+''' Convert a currency to another currency'''
+
 import argparse
 import json
 from urllib import request
