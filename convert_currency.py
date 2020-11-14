@@ -11,3 +11,5 @@ args = parser.parse_args()
 url = "http://freecurrencyrates.com/api/action.php?do=cvals&iso=" + args.target + "&f=" + args.base + "&v=1&s=cbr"
 r = request.urlopen(url)
 obj = json.loads(r.read())
+val = obj[args.target.upper()] * args.value
+convert = '{:,.2f}'.format(val)
