@@ -5,7 +5,7 @@ import random
 import secrets
 import string
 
-parser = argparse.ArgumentParser(description='generate a secure password')
+parser = argparse.ArgumentParser(description='generate a secure random password')
 parser.add_argument('-l', '--length', metavar='size', type=int, help='the length of the generated password', default=8)
 parser.add_argument('-a', '--allow-repeats', action='store_true', help='allow the password to contain repeated characters')
 args = parser.parse_args()
