@@ -14,3 +14,4 @@ Useful scripts for everyday use.
 - `pdf_join.py` - merge multiple PDFs into a single file. Uses `PyPDF2`.
 - `pdf_split.py` - split a PDF file into multiple files. Uses `PyPDF2`.
 - `random_pass.py` - generate a secure random password with a mix of uppercase and lowercase characters, digits, and special characters.
+- `stock_checker.py` - check and graph the price of a stock across a range. Uses `matplotlib`, `pandas`, `yfinance`.
