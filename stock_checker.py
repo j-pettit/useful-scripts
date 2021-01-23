@@ -13,7 +13,7 @@ parser.add_argument('-g', '--graph', action='store_true', help='plot the price d
 args = parser.parse_args()
 
 # get the ticker info
-ticker = yf.download(args.ticker.upper(), start=args.start, end=args.end, progress=False)
+ticker = yf.download(args.ticker, start=args.start, end=args.end, progress=False)
 
 # plot the data
 if args.graph:
